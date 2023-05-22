@@ -590,9 +590,114 @@ textarea.input {
     display: block;
 }
 
-.loader-hidden {
-    opacity: 0;
-    visibility: hidden;
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: opacity 13s, visibility 13s;
+    background-color: white;
+    font-size: 50px;
+}
+
+.loading2{
+    width: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    animation: rotate 5s linear infinite;
+}
+    @keyframes rotate{
+        to{
+            transform: rotate(360deg);
+        }
+    }
+
+
+.loading span{
+ width: 32px;   
+ height: 32px;
+ background-color: red;
+ margin: 4px;
+ animation: scale 1.2s linear infinite;
+}
+
+@keyframes scale{
+    50%{
+        transform: scale(1.2);
+    }
+}
+
+
+.loading span:nth-child(1){
+    border-radius: 50% 50% 0 50%;
+    background-color: #e77f67;
+    transform-origin: bottom right;
+}
+.loading span:nth-child(2){
+    border-radius: 50% 50% 50% 0%;
+    background-color: #67cbe7;
+    transform-origin: bottom left;
+    animation-delay: .5s;
+}
+.loading span:nth-child(3){
+    border-radius: 50% 0% 50% 50%;
+    background-color: #bd1f1f;
+    transform-origin: top right;
+    animation-delay: 1.5s;
+
+}
+.loading span:nth-child(4){
+    border-radius: 0 50% 50%  50%;
+    background-color: #13cc57;
+    transform-origin: top left;
+    animation-delay: 1s;
+}
+
+.wrapper{
+    display: inline-flex;
+    padding: 16px;
+}
+
+.wrapper .static-text{
+    color: #000;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-text{
+    margin-left: 15px;
+}
+
+.dynamic-text li{
+    color: #fc6d6d;
+    list-style: none;
+    font-weight: 500;
+}
+
+.dynamic-text li {
+    position: relative;
+}
+
+.dynamic-text li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+    border-left: 2px solid #fc6d6d;
+    animation: typing 2.5s steps(19) ;
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px  ;
+    }
 }
 
 
@@ -652,7 +757,11 @@ textarea.input {
         font-size: 30px;
         padding-left: 50px;
     }
-
+    
+    .loading{
+        font-size: 30px;
+    }
+    
     nav ul li a {
         font-size: 16px;
     }
@@ -837,6 +946,10 @@ textarea.input {
 
     .hero h1 {
         font-size: 3.5rem;
+    }
+    
+    .loading{
+        font-size: 20px;
     }
 }
 
