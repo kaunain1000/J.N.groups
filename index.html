@@ -230,7 +230,21 @@
         <img src="img/loader-img.png" alt="">
     </div>
 
-
+    <div class="loading">
+        <div class="loading2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="wrapper">
+            <div class="static-text">Welcome To</div>
+            <div class="dynamic-text">
+                <li>J.N. Groups</li>
+            </div>
+        </div>
+    </div>
 
 </body>
 <script src="main.js"></script>
@@ -246,6 +260,14 @@
     setTimeout(function () {
         $('.loader').fadeToggle();
     }, 5000);
+    
+    AOS.init({
+        offset: 300,
+        duration: 1000
+    });
+    setTimeout(function () {
+        $('.loading').fadeToggle();
+    }, 2000);
 
     let menuBtn = document.querySelector('#menu-btn');
     let navbar = document.querySelector('.header .flex .navbar');
